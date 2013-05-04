@@ -5,26 +5,7 @@
 
 <button id="test" onclick="beep();">Beep</button>
 <input id="bpm" type="text">
-<button id="test" onclick="alert(document.getElementById('bpm').value);">Set bpm</button>
 
-<button onclick="myFunction()">Try it</button>
-
-<div id="karin">
-zak
-</div>
-
-<script>
-function myFunction()
-{
-alert("nicht");
-document.getElementById("karin").innerHTML="oder";
-setInterval(function(){ document.getElementById("karin").innerHTML="lebt"; beep(); }, 1000);
-// timer();
-}
-</script>
-
-<button id="start" onclick="var timer = window.setInterval(function() { beep(); }, 1000);">Start</button>
-
-<button id="Stop" onclick="timer.clear
+<button id="toggle" onclick="toggle();">Start</button>
 </body>
 </html>

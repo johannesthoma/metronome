@@ -7,7 +7,7 @@ var beeper = document.getElementById("beep");
 function beep() {
 	visual.innerHTML = (visual.innerHTML == "X") ? "O" : "X";
 	beeper.pause();
-	beeper.currentTime = 0;
+	beeper.currentTime = 0;  // = 1 for gecko 18
 	beeper.play();
 }
 

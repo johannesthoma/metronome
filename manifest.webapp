@@ -1,7 +1,7 @@
 {
     "version": "0.1",
     "name": "Metronome",
-    "launch_path": "/index.html",
+    "launch_path": "/metronome/index.html",
     "description": "A simple Metronome app.",
     "icons": {
         "16": "/logo16.png"

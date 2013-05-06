@@ -2,12 +2,10 @@
 
 var started = false;
 var visual = document.getElementById("visual");
-var beeper = document.getElementById("beep");
 
 function beep() {
-	visual.innerHTML = (visual.innerHTML == "X") ? "O" : "X";
-	beeper.pause();
-	beeper.currentTime = 0;  // = 1 for gecko 18
+	visual.innerHTML = (visual.innerHTML == "X") ? "K" : "X";
+	var beeper = new Audio("beep.wav");
 	beeper.play();
 }
 

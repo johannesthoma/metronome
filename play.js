@@ -26,14 +26,16 @@ function tick() {
 	var next_tick_bpm = parseInt(document.getElementById("bpm").value);
 	if (started) {
 		if (next_tick_bpm > 0) {
-		 	var next_tick_ms = 60000 / next_tick_bpm;
-			var now = (new Date()).getTime();
+			while (1) {
+			 	var next_tick_ms = 60000 / next_tick_bpm;
+				var now = (new Date()).getTime();
 //			alert("Now is "+now);
-			if (last_played == 0 || (now >= last_played+next_tick_ms)) {
-				beep();
-				last_played = now;
+				if (last_played == 0 || (now >= last_played+next_tick_ms)) {
+					beep();
+					last_played = now;
+				}
 			}
-			setTimeout(tick, 1);
+//			setTimeout(tick, 1);
 		} else {
 			toggle();
 		}

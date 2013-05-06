@@ -2,6 +2,7 @@
 
 var started = false;
 var visual = document.getElementById("visual");
+var last_played = 0;
 
 function beep() {
 	visual.innerHTML = (visual.innerHTML == "X") ? "K" : "X";
@@ -13,6 +14,7 @@ function toggle() {
 	if (started) {
 		document.getElementById("toggle").innerHTML = "Start";
 		started = false;
+		last_played = 0;
 	} else {
 		document.getElementById("toggle").innerHTML = "Stop";
 		started = true;
@@ -25,8 +27,13 @@ function tick() {
 	if (started) {
 		if (next_tick_bpm > 0) {
 		 	var next_tick_ms = 60000 / next_tick_bpm;
-			beep();
-			setTimeout(tick, next_tick_ms);
+			var now = (new Date()).getTime();
+//			alert("Now is "+now);
+			if (last_played == 0 || (now >= last_played+next_tick_ms)) {
+				beep();
+				last_played = now;
+			}
+			setTimeout(tick, 1);
 		} else {
 			toggle();
 		}
